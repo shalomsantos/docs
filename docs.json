@@ -34,10 +34,7 @@
     },
     "tabs": [
       {
-        "tab": "Booting"
-      },
-      {
-        "tab": "Referências",
+        "tab": "Booting",
         "pages": [
           {
             "group": "Getting Started",
@@ -47,6 +44,9 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Referências"
       }
     ]
   },
