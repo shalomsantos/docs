@@ -31,7 +31,24 @@
           "icon": "newspaper"
         }
       ]
-    }
+    },
+    "tabs": [
+      {
+        "tab": "Booting"
+      },
+      {
+        "tab": "Referências",
+        "pages": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "quickstart"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
