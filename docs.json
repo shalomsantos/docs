@@ -46,7 +46,16 @@
         ]
       },
       {
-        "tab": "Referências"
+        "tab": "Referências",
+        "groups": [
+          {
+            "group": "Primeiro passos",
+            "pages": [
+              "clone",
+              "build"
+            ]
+          }
+        ]
       }
     ]
   },
