@@ -37,21 +37,14 @@
         "tab": "Referências",
         "pages": [
           "index",
-          "clone",
-          "build",
           {
-            "group": "Primeiro passos",
-            "pages": []
-          }
-        ]
-      },
-      {
-        "tab": "Booting",
-        "pages": [
-          {
-            "group": "Getting Started",
+            "group": "Produto",
             "pages": [
-              "quickstart"
+              "post-produto",
+              "criar-produtos",
+              "untitled-page-1",
+              "atualizar-produto",
+              "delete"
             ]
           }
         ]
