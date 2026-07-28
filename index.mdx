@@ -1,9 +1,13 @@
 ---
-title: "Introdução"
-sidebarTitle: "Introdução"
+title: "Visão geral"
+sidebarTitle: "Visão geral"
 ---
 
-# Base Url
+# Visão geral
+
+Use esta referência para integrar sua loja à API de pagamentos.
+
+## URL base
 
 ```text
 http://184.107.88.17:8080/api
@@ -13,7 +17,7 @@ http://184.107.88.17:8080/api
   O ambiente 100% operado em sandbox, ambiente de produção ainda em etapa de homologação.
 </Tip>
 
-## Authentication
+## Autenticação
 
 Toda requisição deve incluir sua chave de API no header `Authorization`:
 
@@ -47,13 +51,14 @@ Em caso de erro:
 
 ## Códigos de status HTTP
 
-| Codigo | Significado |  |
-| --- | --- | --- |
-| 200 | Sucesso |  |
-| 400 | Requisição inválida — verifique os campos enviados |  |
+| Código | Significado |
+| --- | --- |
+| 200 | Sucesso |
+| 400 | Requisição inválida — verifique os campos enviados |
+| 401 | Chave de API ausente ou inválida |
 
 ## Dicas gerais
 
-<Card title="Dica sobre situação 1" type="check">
-  Nuca faça tal coisa, ou esqueça de fazer tal coisa, um usuário so pode fazer ate tal coisa.
+<Card title="Ambiente de homologação" type="check">
+  A API está em sandbox. Use-a para validar sua integração antes da produção.
 </Card>
