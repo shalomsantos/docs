@@ -1,22 +1,20 @@
 ---
 title: "Introduction"
-description: "Welcome to your project"
+description: "Base URL, autenticação, formato de resposta, códigos de status e limites da API."
 ---
 
-Write a short description of your product here. What it does, who it's for, and what they can accomplish with it.
+# [Base Url](http://184.107.88.17:8080/api)
 
-<Tip>
-  Ao logar é preciso finalizar a onboarding para utilizar todo potencial FortalPay
-</Tip>
+<Prompt description="Base Url" actions={["copy"]}>
+http://184.107.88.17:8080/api
+</Prompt>
 
-<Card title="Quickstart" icon="rocket" href="/quickstart">
-  This card links to the quickstart page in your project.
-</Card>
+## Authentication
 
-<Card title="Components" icon="puzzle-piece" href="https://mintlify.com/docs/components">
-  Add cards, callouts, steps, tabs, and more to design and structure your pages.
-</Card>
+Toda requisição deve incluir sua chave de API no header `Authorization`:
 
-<Card title="Settings" icon="gear" href="https://mintlify.com/docs/organize/settings">
-  Set your site name, branding, and navigation in the `docs.json` file.
-</Card>
+```text
+Authorization: Bearer SUA_CHAVE_API
+```
+
+Requisições sem chave ou com chave inválida retornam `401 Unauthorized`. Consulte a **página de autenticação** para criar e gerenciar suas chaves.

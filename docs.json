@@ -47,7 +47,8 @@
       },
       {
         "tab": "Referências",
-        "groups": [
+        "pages": [
+          "index-1",
           {
             "group": "Primeiro passos",
             "pages": [
