@@ -10,20 +10,6 @@
   "favicon": "/favicon.svg",
   "navigation": {
     "pages": [],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    },
     "tabs": [
       {
         "tab": "Referências",
