@@ -34,26 +34,24 @@
     },
     "tabs": [
       {
+        "tab": "Referências",
+        "pages": [
+          "index",
+          "clone",
+          "build",
+          {
+            "group": "Primeiro passos",
+            "pages": []
+          }
+        ]
+      },
+      {
         "tab": "Booting",
         "pages": [
           {
             "group": "Getting Started",
             "pages": [
-              "index",
               "quickstart"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Referências",
-        "pages": [
-          "index-1",
-          {
-            "group": "Primeiro passos",
-            "pages": [
-              "clone",
-              "build"
             ]
           }
         ]
