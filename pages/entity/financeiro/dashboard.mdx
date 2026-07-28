@@ -11,3 +11,5 @@ Retorne os indicadores e o resumo do dashboard.
 ```text
 /api/dashboard
 ```
+
+Use JWT. Aceita o parâmetro de consulta opcional `period`, com padrão `LAST_30_DAYS`. A resposta `200` retorna o período consultado, intervalos de data, métricas de vendas, cobranças, saldo e série diária em `data`. Um período inválido retorna `400`.

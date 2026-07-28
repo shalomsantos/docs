@@ -11,3 +11,16 @@ Atualize um produto pelo seu UUID.
 ```text
 /api/products/{uuid}
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. O corpo aceita `external_id`, `name`, `description` e `price` (mínimo `1.00`). A resposta `200` retorna o produto atualizado. UUID inexistente retorna `404`; duplicidade de ID externo ou nome retorna `400`; validações retornam `422`.
+
+## Corpo da requisição
+
+Envie somente os campos que deseja alterar:
+
+```json
+{
+  "name": "Produto atualizado",
+  "price": 39.90
+}
+```

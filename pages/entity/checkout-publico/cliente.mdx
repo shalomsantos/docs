@@ -11,3 +11,16 @@ Informe os dados do cliente em um checkout público. Esta rota não exige autent
 ```text
 /api/public/checkouts/{uuid}/customer
 ```
+
+Envie `name`, `email`, `document` (CPF ou CNPJ válido) e `phone` com DDD e 10 ou 11 dígitos. Todos são obrigatórios. A resposta `200` retorna o checkout atualizado. Campos inválidos retornam `422`; checkout inexistente ou não disponível retorna `404`.
+
+## Corpo da requisição
+
+```json
+{
+  "name": "Maria Silva",
+  "email": "maria@exemplo.com",
+  "document": "12345678909",
+  "phone": "(85) 99999-9999"
+}
+```

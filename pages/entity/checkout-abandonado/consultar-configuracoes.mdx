@@ -11,3 +11,5 @@ Consulte as configurações de recuperação de checkout abandonado.
 ```text
 /api/abandoned-checkout/settings
 ```
+
+Use JWT. A resposta `200` retorna `enabled`, `email_enabled`, os três prazos em minutos e datas de criação e atualização. Se não houver configuração, o sistema cria a configuração padrão para o merchant.

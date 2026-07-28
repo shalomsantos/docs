@@ -4,10 +4,63 @@ tag: "POST"
 sidebarTitle: "Criar"
 ---
 
-Crie um produto para a sua loja.
+Crie um produto para a sua loja. O produto é associado automaticamente ao merchant do usuário autenticado e começa com o status `ACTIVE`.
 
 <Badge color="blue">POST</Badge>
 
 ```text
 /api/products
 ```
+
+Consulte a [visão geral](/) para os cabeçalhos e o formato comum de resposta. Você precisa ter o perfil `OWNER` ou `ADMIN` e ter concluído o onboarding.
+
+## Corpo da requisição
+
+```json
+{
+  "external_id": "SKU-001",
+  "name": "Produto exemplo",
+  "description": "Descrição opcional",
+  "price": 29.90
+}
+```
+
+| Campo | Obrigatório | Regras |
+| --- | --- | --- |
+| `external_id` | Não | Máximo de 100 caracteres. Espaços nas extremidades são removidos. Um valor vazio é tratado como `null`. |
+| `name` | Sim | Não pode estar vazio. Máximo de 150 caracteres. A primeira letra é normalizada para maiúscula. |
+| `description` | Não | Descrição do produto. |
+| `price` | Sim | Valor mínimo de `1.00`. O sistema armazena o valor internamente em centavos. |
+
+## Resposta de sucesso
+
+A API retorna `201 Created`.
+
+```json
+{
+  "data": {
+    "uuid": "44e36c1a-937b-479e-bc0d-c6db70a027e7",
+    "external_id": "SKU-001",
+    "name": "Produto exemplo",
+    "description": "Descrição opcional",
+    "price": 29.90,
+    "status": "ACTIVE",
+    "created_at": "2026-07-28T10:30:00",
+    "updated_at": null
+  },
+  "success": true,
+  "error": null
+}
+```
+
+## Erros específicos
+
+| Status | Quando ocorre |
+| --- | --- |
+| `400` | JSON inválido; `external_id` ou nome já usado em outro produto ativo do merchant; ou merchant não encontrado. |
+| `401` | JWT ausente, inválido ou expirado. |
+| `403` | Usuário sem o perfil necessário, onboarding pendente ou falha de CSRF em autenticação por cookie. |
+| `404` | O cabeçalho `X-API-Version` está ausente ou é diferente de `1`. |
+| `415` | O `Content-Type` não é aceito. Use `application/json`. |
+| `422` | Um campo obrigatório está ausente ou vazio, um limite foi excedido ou `price` é menor que `1.00`. O campo `fields` identifica cada erro de validação. |
+| `500` | Ocorreu uma falha inesperada de persistência ou infraestrutura. |

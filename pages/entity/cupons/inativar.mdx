@@ -11,3 +11,5 @@ Inative um cupom pelo seu UUID.
 ```text
 /api/coupons/{uuid}
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. A operação retorna `204 No Content`. Se o cupom não existir ou não pertencer ao merchant, a API retorna `404`.

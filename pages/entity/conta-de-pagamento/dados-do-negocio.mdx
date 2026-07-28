@@ -11,3 +11,17 @@ Envie os dados do negócio no onboarding financeiro.
 ```text
 /api/payment-account/onboarding/business-info
 ```
+
+Use um JWT de `OWNER`. Envie `business_name`, `document` (CNPJ válido), `company_type` e `income_value` (inteiro maior que zero); `fantasy_name` é opcional. A resposta `200` retorna o status da conta. Formato inválido retorna `422`; uma etapa de onboarding inválida retorna `400`.
+
+## Corpo da requisição
+
+```json
+{
+  "business_name": "Loja Exemplo LTDA",
+  "fantasy_name": "Loja Exemplo",
+  "document": "12345678000195",
+  "company_type": "LIMITED",
+  "income_value": 100000
+}
+```

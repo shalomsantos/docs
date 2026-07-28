@@ -11,3 +11,5 @@ Consulte um checkout pelo seu UUID.
 ```text
 /api/checkouts/{uuid}
 ```
+
+Use JWT. A resposta `200` retorna o checkout em `data`, incluindo totais, status, URLs, cupom aplicado, cliente e itens. Um UUID inexistente ou de outro merchant retorna `404`.

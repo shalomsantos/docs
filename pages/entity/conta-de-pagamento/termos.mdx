@@ -11,3 +11,13 @@ Registre o aceite dos termos no onboarding financeiro.
 ```text
 /api/payment-account/onboarding/terms
 ```
+
+Use um JWT de `OWNER`. Envie `{ "terms_accepted": true }`. A resposta `200` retorna o status da conta. O valor deve ser `true`; caso contrário, a API retorna `422`.
+
+## Corpo da requisição
+
+```json
+{
+  "terms_accepted": true
+}
+```

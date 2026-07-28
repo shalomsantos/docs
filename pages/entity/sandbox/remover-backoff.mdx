@@ -11,3 +11,5 @@ Remova o backoff de entrega de um webhook no sandbox.
 ```text
 /api/sandbox/merchants/{merchantUuid}/webhooks/{webhookId}/removeBackoff
 ```
+
+Disponível somente em `local`, `dev` e `sandbox`. Use JWT. A resposta `200` confirma a remoção da penalização de entrega. Merchant ou webhook inexistente retorna `404`; erro do provedor retorna `400`.

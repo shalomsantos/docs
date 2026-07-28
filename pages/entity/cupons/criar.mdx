@@ -11,3 +11,20 @@ Crie um cupom de desconto.
 ```text
 /api/coupons
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. Envie `code`, `type`, `value` (inteiro mínimo `1`) e, opcionalmente, `max_uses`, `starts_at` e `expires_at` (datas em `yyyy-MM-ddTHH:mm:ss`). O sucesso retorna `200` com o cupom em `data`, incluindo `uuid`, `used_count`, `status` e datas. Campos inválidos retornam `422`; código duplicado ou regra de negócio inválida retornam `400`.
+
+## Corpo da requisição
+
+```json
+{
+  "code": "BEMVINDO10",
+  "type": "PERCENTAGE",
+  "value": 10,
+  "max_uses": 100,
+  "starts_at": "2026-07-28T09:00:00",
+  "expires_at": "2026-08-31T23:59:59"
+}
+```
+
+`code`, `type` e `value` são obrigatórios. Consulte os valores aceitos de `type` no contrato da API.

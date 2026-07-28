@@ -11,3 +11,19 @@ Crie um checkout para iniciar uma cobrança.
 ```text
 /api/checkouts
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. Envie `items` com pelo menos um item (`product_uuid` e `quantity`, mínimo `1`). Você pode incluir `coupons` (UUIDs), `payment_methods`, `completion_url` e `return_url`; as URLs devem ser válidas. A resposta `200` retorna o checkout em `data`, com totais em centavos, status, URL pública, métodos disponíveis, cliente e itens. Campos inválidos retornam `422`; produto ou cupom indisponível retorna `400` ou `404`, conforme a regra aplicável.
+
+## Corpo da requisição
+
+```json
+{
+  "items": [
+    { "product_uuid": "44e36c1a-937b-479e-bc0d-c6db70a027e7", "quantity": 2 }
+  ],
+  "coupons": ["a7f4da86-dcec-476b-af75-0c889436d087"],
+  "payment_methods": ["PIX"],
+  "completion_url": "https://loja.exemplo.com/obrigado",
+  "return_url": "https://loja.exemplo.com/carrinho"
+}
+```

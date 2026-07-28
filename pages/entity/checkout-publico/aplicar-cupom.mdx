@@ -11,3 +11,13 @@ Aplique um cupom a um checkout público. Esta rota não exige autenticação.
 ```text
 /api/public/checkouts/{uuid}/coupon
 ```
+
+Envie `{ "coupon_code": "CUPOM10" }`. O código é obrigatório e aceita até 50 caracteres. A resposta `200` retorna o checkout com `applied_coupon`. Checkout ou cupom não encontrado retorna `404`; cupom inativo, expirado, fora da vigência ou sem usos disponíveis retorna `400`; validação retorna `422`.
+
+## Corpo da requisição
+
+```json
+{
+  "coupon_code": "BEMVINDO10"
+}
+```

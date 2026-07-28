@@ -11,3 +11,19 @@ Envie o endereço no onboarding financeiro.
 ```text
 /api/payment-account/onboarding/address
 ```
+
+Use um JWT de `OWNER`. Envie `postal_code`, `address`, `address_number`, `province`, `city` e `state`; `complement` é opcional. `state` deve ser uma UF brasileira com duas letras. A resposta `200` retorna o status da conta. Validações retornam `422`.
+
+## Corpo da requisição
+
+```json
+{
+  "postal_code": "60175-055",
+  "address": "Rua Exemplo",
+  "address_number": "100",
+  "complement": "Sala 1",
+  "province": "Aldeota",
+  "city": "Fortaleza",
+  "state": "CE"
+}
+```

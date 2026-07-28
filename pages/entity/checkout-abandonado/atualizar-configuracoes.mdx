@@ -11,3 +11,17 @@ Atualize as configurações de recuperação de checkout abandonado.
 ```text
 /api/abandoned-checkout/settings
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. Envie `enabled`, `email_enabled` e `first_reminder_minutes`; `second_reminder_minutes` e `third_reminder_minutes` são opcionais. Cada prazo informado deve ser positivo, o segundo deve ser maior que o primeiro e o terceiro maior que o segundo. A resposta `200` retorna a configuração atualizada. Violações de formato retornam `422`; regras de ordem dos prazos retornam `400`.
+
+## Corpo da requisição
+
+```json
+{
+  "enabled": true,
+  "email_enabled": true,
+  "first_reminder_minutes": 60,
+  "second_reminder_minutes": 1440,
+  "third_reminder_minutes": 4320
+}
+```

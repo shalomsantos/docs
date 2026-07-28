@@ -11,3 +11,5 @@ Liste os webhooks de um lojista no sandbox.
 ```text
 /api/sandbox/merchants/{merchantUuid}/webhooks
 ```
+
+Disponível somente em `local`, `dev` e `sandbox`. Use JWT. A resposta `200` retorna a lista de webhooks do merchant em `data`. Merchant inexistente ou não pertencente ao usuário retorna `404`.

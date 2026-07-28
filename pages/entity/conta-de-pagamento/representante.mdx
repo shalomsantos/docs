@@ -11,3 +11,16 @@ Envie os dados do representante legal no onboarding financeiro.
 ```text
 /api/payment-account/onboarding/representative
 ```
+
+Use um JWT de `OWNER`. Envie `name`, `phone`, `document` (CPF ou CNPJ válido) e `birth_date` em data passada. A resposta `200` retorna o status da conta. Validações retornam `422`.
+
+## Corpo da requisição
+
+```json
+{
+  "name": "Maria Silva",
+  "phone": "(85) 99999-9999",
+  "document": "12345678909",
+  "birth_date": "1990-05-20"
+}
+```

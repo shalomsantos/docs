@@ -11,3 +11,13 @@ Gere ou inicie o pagamento de um checkout.
 ```text
 /api/checkouts/{uuid}/pay
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. O corpo é opcional e aceita `payment_method`. Quando o checkout não define um método, esse campo é obrigatório. A resposta `200` retorna `checkout_uuid`, `status`, `payment_method`, `amount`, `pix_copy_paste`, `pix_qr_code_image` e `expires_at`. Checkout inexistente retorna `404`; método inválido ou indisponível, checkout sem cliente, cancelado ou já pago retornam `400`.
+
+## Corpo da requisição
+
+```json
+{
+  "payment_method": "PIX"
+}
+```

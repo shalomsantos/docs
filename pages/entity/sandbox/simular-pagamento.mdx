@@ -11,3 +11,5 @@ Simule o pagamento de um checkout no ambiente de sandbox.
 ```text
 /api/sandbox/checkouts/{uuid}/simulate-payment
 ```
+
+Disponível somente nos perfis `local`, `dev` e `sandbox`. Use JWT. A resposta `200` retorna `{ "message": "Simulação de pagamento solicitada com sucesso" }` em `data`. Checkout inexistente, de outro merchant ou em estado inválido retorna `404` ou `400`.

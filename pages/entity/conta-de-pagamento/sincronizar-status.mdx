@@ -11,3 +11,5 @@ Sincronize o status da conta com o provedor de pagamentos.
 ```text
 /api/payment-account/sync-status
 ```
+
+Use um JWT de `OWNER`. Não envie corpo. A resposta `200` retorna o status atualizado da conta. Conta não iniciada ou falha de comunicação com o provedor retorna `400` ou `500`.

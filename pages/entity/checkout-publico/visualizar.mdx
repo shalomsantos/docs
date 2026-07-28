@@ -11,3 +11,5 @@ Retorne as informações de um checkout para o cliente final. Esta rota não exi
 ```text
 /api/public/checkouts/{uuid}
 ```
+
+A resposta `200` retorna o checkout público em `data`: totais em centavos, status, métodos disponíveis, dados do merchant, cliente, itens e cupom aplicado. UUID inexistente, inativo ou não acessível publicamente retorna `404`.

@@ -11,3 +11,5 @@ Consulte o status público de um checkout. Esta rota não exige autenticação.
 ```text
 /api/public/checkouts/{uuid}/status
 ```
+
+A resposta `200` retorna `status` e `updated_at` em `data`, com `Cache-Control: no-store`. UUID inexistente retorna `404`.

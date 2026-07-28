@@ -11,3 +11,5 @@ Aprove uma conta de provedor no ambiente de sandbox.
 ```text
 /api/sandbox/provider-accounts/{uuid}/approve
 ```
+
+Disponível somente em `local`, `dev` e `sandbox`. Use JWT. A resposta `200` retorna uma mensagem de aprovação. Conta não iniciada, incompatível ou sem credencial retorna `400`; UUID de outra conta retorna `404`.

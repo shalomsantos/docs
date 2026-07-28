@@ -11,3 +11,5 @@ Inative um produto pelo seu UUID.
 ```text
 /api/products/{uuid}
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. A operação retorna `204 No Content`. UUID inexistente ou produto já inativo retorna `404` ou `400`, conforme a regra aplicável.

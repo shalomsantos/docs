@@ -11,3 +11,16 @@ Vincule ou preencha os dados do cliente em um checkout.
 ```text
 /api/checkouts/{uuid}/customer
 ```
+
+Use um JWT de `OWNER` ou `ADMIN`. Envie `name`, `email`, `document` (CPF ou CNPJ válido) e `phone` com DDD e 10 ou 11 dígitos. Todos são obrigatórios; nome e e-mail têm até 150 caracteres. A resposta `200` retorna o checkout atualizado. Falhas de validação retornam `422`; checkout inexistente retorna `404`.
+
+## Corpo da requisição
+
+```json
+{
+  "name": "Maria Silva",
+  "email": "maria@exemplo.com",
+  "document": "12345678909",
+  "phone": "(85) 99999-9999"
+}
+```

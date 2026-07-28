@@ -11,3 +11,13 @@ Realize o pagamento de um checkout público. Esta rota não exige autenticação
 ```text
 /api/public/checkouts/{uuid}/pay
 ```
+
+O corpo é opcional e aceita `payment_method`. Quando o checkout não define o método, esse campo é obrigatório. A resposta `200` retorna os dados do pagamento em `data`, incluindo o código copia-e-cola e a imagem QR do Pix. Checkout inexistente retorna `404`; método inválido, indisponível, checkout sem cliente, cancelado, pago ou abaixo do valor mínimo retorna `400`.
+
+## Corpo da requisição
+
+```json
+{
+  "payment_method": "PIX"
+}
+```
